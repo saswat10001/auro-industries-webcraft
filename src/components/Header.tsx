@@ -43,12 +43,14 @@ const Header: React.FC<HeaderProps> = ({ onGetQuote }) => {
         
         {/* Main navigation */}
         <nav className="flex items-center justify-between py-4">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/1b3a86a2-4367-48f8-8588-eaab18f3faf8.png" 
+              alt="Auro Industries Logo" 
+              className="h-10 w-auto"
+            />
             <div className="text-2xl font-bold text-slate-800">
               AURO <span className="text-blue-600">INDUSTRIES</span>
-            </div>
-            <div className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-              MSME Registered
             </div>
           </div>
 
