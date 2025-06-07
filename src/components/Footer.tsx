@@ -1,17 +1,15 @@
-
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from 'lucide-react';
-
 const Footer: React.FC = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <footer className="bg-slate-800 text-white">
+  return <footer className="bg-slate-800 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -46,34 +44,22 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => scrollToSection('#home')}
-                  className="text-slate-300 hover:text-blue-400 transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('#home')} className="text-slate-300 hover:text-blue-400 transition-colors text-left">
                   Home
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('#about')}
-                  className="text-slate-300 hover:text-blue-400 transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('#about')} className="text-slate-300 hover:text-blue-400 transition-colors text-left">
                   About Us
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('#products')}
-                  className="text-slate-300 hover:text-blue-400 transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('#products')} className="text-slate-300 hover:text-blue-400 transition-colors text-left">
                   Our Products
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('#contact')}
-                  className="text-slate-300 hover:text-blue-400 transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('#contact')} className="text-slate-300 hover:text-blue-400 transition-colors text-left">
                   Contact
                 </button>
               </li>
@@ -107,11 +93,11 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-sm text-slate-300">+91-XXXXXXXXXX</span>
+                <span className="text-sm text-slate-300">+91-7008566816</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-sm text-slate-300">info@auroindustries.com</span>
+                <span className="text-sm text-slate-300">auro_industry@yahoo.in</span>
               </div>
             </div>
           </div>
@@ -122,9 +108,7 @@ const Footer: React.FC = () => {
       <div className="border-t border-slate-700">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-slate-400">
-              © 2024 Auro Industries. All rights reserved. | MSME Reg: UDYAM-PB-XX-XXXXXXX
-            </div>
+            <div className="text-sm text-slate-400">© 2024 Auro Industries. All rights reserved. | MSME Reg: UD-OD-30-000XXXX</div>
             <div className="flex space-x-6 text-sm text-slate-400">
               <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
@@ -133,8 +117,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

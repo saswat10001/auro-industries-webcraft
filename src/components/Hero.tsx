@@ -1,14 +1,12 @@
-
 import React from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-
 interface HeroProps {
   onGetQuote: () => void;
 }
-
-const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
-  return (
-    <section id="home" className="pt-20 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen flex items-center">
+const Hero: React.FC<HeroProps> = ({
+  onGetQuote
+}) => {
+  return <section id="home" className="pt-20 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -34,17 +32,13 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={onGetQuote}
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium text-lg flex items-center justify-center space-x-2 group"
-              >
+              <button onClick={onGetQuote} className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium text-lg flex items-center justify-center space-x-2 group">
                 <span>Get a Quote</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button
-                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200 font-medium text-lg"
-              >
+              <button onClick={() => document.querySelector('#about')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200 font-medium text-lg">
                 Learn More
               </button>
             </div>
@@ -55,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
               <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-200">15+</div>
+                  <div className="text-3xl font-bold text-blue-200">35+</div>
                   <div className="text-sm">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -75,8 +69,6 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
