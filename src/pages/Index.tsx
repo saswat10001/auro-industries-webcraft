@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Products from '../components/Products';
+import Clients from '../components/Clients';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import QuoteModal from '../components/QuoteModal';
@@ -25,6 +26,7 @@ const Index = () => {
       <Hero onGetQuote={handleGetQuote} />
       <About />
       <Products />
+      <Clients />
       <Contact />
       <Footer />
       <QuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />

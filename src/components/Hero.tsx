@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 interface HeroProps {
@@ -7,6 +7,49 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
+  const [counters, setCounters] = useState({
+    experience: 0,
+    products: 0,
+    clients: 0,
+    projects: 0
+  });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  const animateCounter = (target: number, key: keyof typeof counters) => {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
+    }, 30);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCounter(35, 'experience');
+          setTimeout(() => animateCounter(100, 'products'), 200);
+          setTimeout(() => animateCounter(150, 'clients'), 400);
+          setTimeout(() => animateCounter(500, 'projects'), 600);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
     <section 
       id="home" 
@@ -62,24 +105,27 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
           </div>
 
           <div className="relative animate-fade-in animation-delay-600">
-            <div className="bg-gradient-to-br from-blue-600/80 to-slate-700/80 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+            <div 
+              ref={statsRef}
+              className="bg-gradient-to-br from-blue-600/80 to-slate-700/80 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
+            >
               <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="text-center hover:scale-110 transition-transform duration-300">
-                  <div className="text-3xl font-bold text-blue-200 animate-bounce">35+</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-200">{counters.experience}+</div>
                   <div className="text-sm">Years Experience</div>
                 </div>
-                <div className="text-center hover:scale-110 transition-transform duration-300">
-                  <div className="text-3xl font-bold text-blue-200 animate-bounce animation-delay-100">500+</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-200">{counters.products}+</div>
                   <div className="text-sm">Products</div>
                 </div>
-                <div className="text-center hover:scale-110 transition-transform duration-300">
-                  <div className="text-3xl font-bold text-blue-200 animate-bounce animation-delay-200">100+</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-200">{counters.clients}+</div>
                   <div className="text-sm">Happy Clients</div>
                 </div>
-                <div className="text-center hover:scale-110 transition-transform duration-300">
-                  <div className="text-3xl font-bold text-blue-200 animate-bounce animation-delay-300">24/7</div>
-                  <div className="text-sm">Support</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-200">{counters.projects}+</div>
+                  <div className="text-sm">Completed Projects</div>
                 </div>
               </div>
             </div>
