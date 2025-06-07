@@ -1,35 +1,56 @@
 import React from 'react';
 import { Award, Users, Cog, Shield } from 'lucide-react';
+
 const About: React.FC = () => {
-  const features = [{
-    icon: Award,
-    title: 'MSME Certified',
-    description: 'Officially registered with the Ministry of Micro, Small & Medium Enterprises'
-  }, {
-    icon: Cog,
-    title: 'Precision Engineering',
-    description: 'State-of-the-art manufacturing processes ensuring highest quality standards'
-  }, {
-    icon: Users,
-    title: 'Expert Team',
-    description: 'Skilled professionals with decades of experience in industrial manufacturing'
-  }, {
-    icon: Shield,
-    title: 'Quality Assurance',
-    description: 'Rigorous testing and quality control at every stage of production'
-  }];
-  return <section id="about" className="py-20 bg-white">
+  const features = [
+    {
+      icon: Award,
+      title: 'MSME Certified',
+      description: 'Officially registered with the Ministry of Micro, Small & Medium Enterprises'
+    },
+    {
+      icon: Cog,
+      title: 'Precision Engineering',
+      description: 'State-of-the-art manufacturing processes ensuring highest quality standards'
+    },
+    {
+      icon: Users,
+      title: 'Expert Team',
+      description: 'Skilled professionals with decades of experience in industrial manufacturing'
+    },
+    {
+      icon: Shield,
+      title: 'Quality Assurance',
+      description: 'Rigorous testing and quality control at every stage of production'
+    }
+  ];
+
+  return (
+    <section 
+      id="about" 
+      className="py-20 relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.95)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">About Auro Industries</h2>
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4 transform hover:scale-105 transition-transform duration-300">
+            About Auro Industries
+          </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             A trusted name in industrial manufacturing, committed to delivering excellence through precision engineering and quality craftsmanship.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-slate-800">Driving Industrial Excellence Since 1985</h3>
+          <div className="space-y-6 animate-fade-in animation-delay-300">
+            <h3 className="text-3xl font-bold text-slate-800 hover:text-blue-600 transition-colors duration-300">
+              Driving Industrial Excellence Since 1985
+            </h3>
             <p className="text-lg text-slate-600 leading-relaxed">
               Auro Industries stands as a beacon of reliability in the industrial manufacturing sector. 
               As an MSME-registered company, we have built our reputation on delivering high-performance 
@@ -41,7 +62,7 @@ const About: React.FC = () => {
               and infrastructure development. We understand that industrial operations demand 
               components that perform flawlessly under pressure.
             </p>
-            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+            <div className="bg-blue-50/80 backdrop-blur-sm p-6 rounded-lg border-l-4 border-blue-600 hover:shadow-lg transition-all duration-300 transform hover:scale-102">
               <h4 className="font-bold text-slate-800 mb-2">Our Mission</h4>
               <p className="text-slate-600">
                 To provide world-class industrial solutions through innovative engineering, 
@@ -51,7 +72,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-100 to-blue-50 p-8 rounded-2xl">
+          <div className="bg-gradient-to-br from-slate-100/80 to-blue-50/80 backdrop-blur-sm p-8 rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:scale-105 animate-fade-in animation-delay-600">
             <h4 className="text-2xl font-bold text-slate-800 mb-6">Why Choose Us?</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
@@ -79,15 +100,25 @@ const About: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => <div key={index} className="text-center group">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 transition-colors duration-200">
-                <feature.icon className="w-8 h-8" />
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="text-center group animate-fade-in hover:scale-110 transition-all duration-500 transform"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-blue-700 group-hover:to-blue-800 transition-all duration-300 group-hover:rotate-12 group-hover:shadow-2xl">
+                <feature.icon className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <h4 className="text-xl font-bold text-slate-800 mb-2">{feature.title}</h4>
+              <h4 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                {feature.title}
+              </h4>
               <p className="text-slate-600">{feature.description}</p>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;
