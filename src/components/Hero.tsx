@@ -14,7 +14,25 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
     projects: 0
   });
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
+
+  const backgroundImages = [
+    "/lovable-uploads/fe7fc190-c676-40e0-89e9-57566f5d3964.png",
+    "/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png",
+    "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png",
+    "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png",
+    "/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png"
+  ];
+
+  // Sequential image animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
 
   const animateCounter = (target: number, key: keyof typeof counters) => {
     let current = 0;
@@ -55,47 +73,26 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
       id="home" 
       className="pt-20 min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* Animated Background Images */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="steel-bg-1 absolute top-0 left-0 w-full h-full opacity-20">
-          <img 
-            src="/lovable-uploads/fe7fc190-c676-40e0-89e9-57566f5d3964.png" 
-            alt="Steel Industry Background"
-            className="w-full h-full object-cover moving-bg-slow"
-          />
-        </div>
-        <div className="steel-bg-2 absolute top-0 right-0 w-3/4 h-full opacity-15">
-          <img 
-            src="/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png" 
-            alt="Steel Manufacturing"
-            className="w-full h-full object-cover moving-bg-medium"
-          />
-        </div>
-        <div className="steel-bg-3 absolute bottom-0 left-0 w-2/3 h-3/4 opacity-10">
-          <img 
-            src="/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png" 
-            alt="Steel Foundry"
-            className="w-full h-full object-cover moving-bg-fast"
-          />
-        </div>
-        <div className="steel-bg-4 absolute top-1/4 right-1/4 w-1/2 h-1/2 opacity-12">
-          <img 
-            src="/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png" 
-            alt="Steel Welding"
-            className="w-full h-full object-cover moving-bg-reverse"
-          />
-        </div>
-        <div className="steel-bg-5 absolute bottom-1/4 right-0 w-3/5 h-2/3 opacity-8">
-          <img 
-            src="/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png" 
-            alt="Industrial Machinery"
-            className="w-full h-full object-cover moving-bg-diagonal"
-          />
-        </div>
+      {/* Full-size Sequential Background Images */}
+      <div className="absolute inset-0">
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-2000 ${
+              index === currentImageIndex ? 'opacity-60' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image}
+              alt={`Steel Industry Background ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Main gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 to-blue-900/75"></div>
+      {/* Gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/75 to-blue-900/70"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
