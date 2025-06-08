@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -17,9 +18,11 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
   const statsRef = useRef<HTMLDivElement>(null);
 
   const backgroundImages = [
-    "/lovable-uploads/3226b38f-8322-43f1-a486-bb25dea604f9.png",
-    "/lovable-uploads/0a1d8cc5-7868-45a2-94d1-c4ea23b8e20e.png",
-    "/lovable-uploads/ea4e6be4-17c4-4f21-af9a-01fd939c2ccc.png"
+    "/lovable-uploads/fe7fc190-c676-40e0-89e9-57566f5d3964.png",
+    "/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png",
+    "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png",
+    "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png",
+    "/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png"
   ];
 
   // Sequential image animation
