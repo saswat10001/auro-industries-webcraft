@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ onGetQuote }) => {
               <img 
                 src="/lovable-uploads/1b3a86a2-4367-48f8-8588-eaab18f3faf8.png" 
                 alt="Auro Industries Logo" 
-                className="h-10 w-auto hover:rotate-12 transition-transform duration-500" 
+                className="h-10 w-auto" 
               />
               <div className="text-2xl font-bold text-slate-800">
                 AURO <span className="text-blue-600">INDUSTRIES</span>
