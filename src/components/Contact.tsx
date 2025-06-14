@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Get in Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="bg-blue-600 text-white p-3 rounded-lg group-hover:bg-blue-700 group-hover:rotate-12 transition-all duration-300">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg transition-all duration-300">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="bg-blue-600 text-white p-3 rounded-lg group-hover:bg-blue-700 group-hover:rotate-12 transition-all duration-300">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg transition-all duration-300">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="bg-blue-600 text-white p-3 rounded-lg group-hover:bg-blue-700 group-hover:rotate-12 transition-all duration-300">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg transition-all duration-300">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="bg-blue-600 text-white p-3 rounded-lg group-hover:bg-blue-700 group-hover:rotate-12 transition-all duration-300">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg transition-all duration-300">
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="bg-green-600 text-white p-3 rounded-lg group-hover:bg-green-700 group-hover:rotate-12 transition-all duration-300">
+                  <div className="bg-green-600 text-white p-3 rounded-lg transition-all duration-300">
                     <Building className="w-6 h-6" />
                   </div>
                   <div>
