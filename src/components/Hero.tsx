@@ -17,7 +17,6 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
   const statsRef = useRef<HTMLDivElement>(null);
 
   const backgroundImages = [
-    "/lovable-uploads/fe7fc190-c676-40e0-89e9-57566f5d3964.png",
     "/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png",
     "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png",
     "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png",
