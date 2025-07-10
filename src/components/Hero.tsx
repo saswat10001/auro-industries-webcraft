@@ -136,7 +136,7 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
           <div className="relative">
             <div 
               ref={statsRef}
-              className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-12 text-white border border-white/20"
+              className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20"
             >
               <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
               <div className="grid grid-cols-2 gap-4">
