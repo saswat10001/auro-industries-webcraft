@@ -208,7 +208,7 @@ const Products: React.FC = () => {
                 >
                   <div className="flex items-center space-x-3">
                     <Package className="w-6 h-6 text-blue-600" />
-                    <h3 className="text-xl font-bold text-slate-800">{category.name}</h3>
+                    <h3 className="text-xl font-bold text-slate-800 text-left">{category.name}</h3>
                   </div>
                   {openCategory === category.id ? (
                     <ChevronUp className="w-6 h-6 text-slate-600" />
