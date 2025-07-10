@@ -39,12 +39,26 @@ const Clients: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
+        <div className="max-w-6xl mx-auto overflow-hidden">
+          <div className="flex animate-[scroll_30s_linear_infinite]">
+            {/* First set of logos */}
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-4 bg-slate-50 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                className="flex-shrink-0 flex items-center justify-center p-4 bg-slate-50 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 group mx-4 min-w-[200px] h-20"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-w-full max-h-16 object-contain transition-all duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {clients.map((client, index) => (
+              <div
+                key={`duplicate-${index}`}
+                className="flex-shrink-0 flex items-center justify-center p-4 bg-slate-50 rounded-lg hover:bg-white hover:shadow-lg transition-all duration-300 group mx-4 min-w-[200px] h-20"
               >
                 <img
                   src={client.logo}
