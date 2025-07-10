@@ -90,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
       </div>
 
       {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/75 to-blue-900/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 to-blue-900/85"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
