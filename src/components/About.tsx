@@ -30,7 +30,7 @@ const About: React.FC = () => {
       id="about" 
       className="py-20 relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.95)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
+        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.95)), url('/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
