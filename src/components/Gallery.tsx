@@ -59,6 +59,11 @@ const Gallery = () => {
       src: '/lovable-uploads/7ca2ec4f-f97f-4de2-a4d9-bc806f0e4b02.png',
       title: 'Industrial Clamps',
       description: 'Heavy-duty clamps for securing industrial components'
+    },
+    {
+      src: '/lovable-uploads/970e935a-8733-4d15-b52d-e625cbc4efad.png',
+      title: 'Bucket Elevator',
+      description: 'Heavy-duty bucket elevator components for material handling'
     }
   ];
 
