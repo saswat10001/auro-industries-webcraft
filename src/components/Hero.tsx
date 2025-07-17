@@ -105,7 +105,7 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           <div className="relative">
-            <div ref={statsRef} className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 py-[14px] pl-[24px] pr-[12px] my-0">
+            <div ref={statsRef} className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-6 text-white border border-white/20 aspect-square flex flex-col justify-center">
               <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
