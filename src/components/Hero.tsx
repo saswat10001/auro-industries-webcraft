@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-
 interface HeroProps {
   onGetQuote: () => void;
 }
-
-const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
+const Hero: React.FC<HeroProps> = ({
+  onGetQuote
+}) => {
   const [counters, setCounters] = useState({
     experience: 0,
     products: 0,
@@ -15,23 +15,15 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
-
-  const backgroundImages = [
-    "/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png",
-    "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png",
-    "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png",
-    "/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png"
-  ];
+  const backgroundImages = ["/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png", "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png", "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png", "/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png"];
 
   // Sequential image animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+      setCurrentImageIndex(prev => (prev + 1) % backgroundImages.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
-
   const animateCounter = (target: number, key: keyof typeof counters) => {
     let current = 0;
     const increment = target / 50;
@@ -41,52 +33,35 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
         current = target;
         clearInterval(timer);
       }
-      setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
+      setCounters(prev => ({
+        ...prev,
+        [key]: Math.floor(current)
+      }));
     }, 30);
   };
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          animateCounter(35, 'experience');
-          setTimeout(() => animateCounter(100, 'products'), 200);
-          setTimeout(() => animateCounter(150, 'clients'), 400);
-          setTimeout(() => animateCounter(500, 'projects'), 600);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        setHasAnimated(true);
+        animateCounter(35, 'experience');
+        setTimeout(() => animateCounter(100, 'products'), 200);
+        setTimeout(() => animateCounter(150, 'clients'), 400);
+        setTimeout(() => animateCounter(500, 'projects'), 600);
+      }
+    }, {
+      threshold: 0.5
+    });
     if (statsRef.current) {
       observer.observe(statsRef.current);
     }
-
     return () => observer.disconnect();
   }, [hasAnimated]);
-
-  return (
-    <section 
-      id="home" 
-      className="pt-20 min-h-screen flex items-center relative overflow-hidden"
-    >
+  return <section id="home" className="pt-20 min-h-screen flex items-center relative overflow-hidden">
       {/* Full-size Sequential Background Images */}
       <div className="absolute inset-0">
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-2000 ${
-              index === currentImageIndex ? 'opacity-60' : 'opacity-0'
-            }`}
-          >
-            <img 
-              src={image}
-              alt={`Steel Industry Background ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+        {backgroundImages.map((image, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-2000 ${index === currentImageIndex ? 'opacity-60' : 'opacity-0'}`}>
+            <img src={image} alt={`Steel Industry Background ${index + 1}`} className="w-full h-full object-cover" />
+          </div>)}
       </div>
 
       {/* Gradient overlay for text readability */}
@@ -117,27 +92,20 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={onGetQuote} 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-lg flex items-center justify-center space-x-2 group"
-              >
+              <button onClick={onGetQuote} className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium text-lg flex items-center justify-center space-x-2 group">
                 <span>Get a Quote</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
-              <button 
-                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })} 
-                className="border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:border-blue-400 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-medium text-lg"
-              >
+              <button onClick={() => document.querySelector('#about')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:border-blue-400 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-medium text-lg">
                 Learn More
               </button>
             </div>
           </div>
 
           <div className="relative">
-            <div 
-              ref={statsRef}
-              className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20"
-            >
+            <div ref={statsRef} className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 py-[14px] px-[39px] my-0">
               <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
@@ -161,8 +129,6 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
