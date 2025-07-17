@@ -105,27 +105,7 @@ const Hero: React.FC<HeroProps> = ({
           </div>
 
           <div className="relative">
-            <div ref={statsRef} className="bg-gradient-to-br from-blue-600/60 to-slate-700/60 backdrop-blur-md p-8 text-white border border-white/20 py-[14px] px-[39px] rounded bg-transparent my-0 mx-[70px]">
-              <h3 className="text-2xl font-bold mb-6">Our Expertise</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-200">{counters.experience}+</div>
-                  <div className="text-sm">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-200">{counters.products}+</div>
-                  <div className="text-sm">Products</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-200">{counters.clients}+</div>
-                  <div className="text-sm">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-200">{counters.projects}+</div>
-                  <div className="text-sm">Completed Projects</div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
