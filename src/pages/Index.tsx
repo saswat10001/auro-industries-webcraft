@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -9,6 +8,7 @@ import Clients from '../components/Clients';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import QuoteModal from '../components/QuoteModal';
+import { DottedSurface } from '../components/ui/dotted-surface';
 
 const Index = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -22,7 +22,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <DottedSurface theme="dark" className="fixed inset-0 -z-10" />
       <Header onGetQuote={handleGetQuote} />
       <Hero onGetQuote={handleGetQuote} />
       <About />
