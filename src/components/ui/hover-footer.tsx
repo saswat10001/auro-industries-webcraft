@@ -134,7 +134,7 @@ export const FooterBackgroundGradient = () => {
       className="absolute inset-0 z-0"
       style={{
         background:
-          "radial-gradient(125% 125% at 50% 10%, hsl(var(--background)) 50%, hsl(217 91% 60% / 0.2) 100%)",
+          "radial-gradient(125% 125% at 50% 10%, #0a0a0b 50%, rgba(59, 130, 246, 0.15) 100%)",
       }}
     />
   );
