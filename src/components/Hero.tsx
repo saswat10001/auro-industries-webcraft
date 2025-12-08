@@ -15,7 +15,12 @@ const Hero: React.FC<HeroProps> = ({
   const [hasAnimated, setHasAnimated] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
-  const backgroundImages = ["/lovable-uploads/58a94a63-d90d-4d72-ab36-1956bf84ce29.png", "/lovable-uploads/1ebb6e81-ed5c-4f3b-a1c0-5ecabb51efd9.png", "/lovable-uploads/164ea2ce-9c8b-42bc-a99f-e482e6bd56b4.png", "/lovable-uploads/b93e179a-c435-412b-a769-907f4ccca916.png"];
+  const backgroundImages = [
+    "/images/welding-sparks.jpg",
+    "/images/cnc-machining.jpg", 
+    "/images/industrial-factory.jpg",
+    "/images/steel-manufacturing.jpg"
+  ];
 
   // Sequential image animation
   useEffect(() => {
