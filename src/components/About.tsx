@@ -101,34 +101,100 @@ const About: React.FC = () => {
 
         {/* Mission, Vision, Values Section */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Handshake className="w-10 h-10" />
+          {/* Mission Card */}
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+            {/* Default Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Handshake className="w-10 h-10" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Mission</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                To provide world-class industrial solutions through innovative engineering and superior quality.
+              </p>
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Mission</h4>
-            <p className="text-slate-600 leading-relaxed">
-              To provide world-class industrial solutions through innovative engineering, superior quality, and exceptional customer service while maintaining sustainable manufacturing practices.
-            </p>
+            {/* Hover Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-600 to-blue-700 text-white opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+              <h4 className="text-xl font-bold mb-4 uppercase tracking-wide">Our Mission</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">35+</div>
+                  <span>Years of Excellence</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">100%</div>
+                  <span>Quality Commitment</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">24/7</div>
+                  <span>Customer Support</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Lightbulb className="w-10 h-10" />
+          {/* Vision Card */}
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+            {/* Default Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Lightbulb className="w-10 h-10" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Vision</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                To become India's leading industrial manufacturing partner, recognized for precision engineering.
+              </p>
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Vision</h4>
-            <p className="text-slate-600 leading-relaxed">
-              To become India's leading industrial manufacturing partner, recognized for precision engineering, reliability, and continuous innovation in every component we deliver.
-            </p>
+            {/* Hover Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-600 to-blue-700 text-white opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+              <h4 className="text-xl font-bold mb-4 uppercase tracking-wide">Our Vision</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">#1</div>
+                  <span>Industry Leadership</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">🌍</div>
+                  <span>Pan-India Presence</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">∞</div>
+                  <span>Continuous Innovation</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Star className="w-10 h-10" />
+          {/* Values Card */}
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+            {/* Default Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Star className="w-10 h-10" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Values</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                Integrity, excellence, and customer-centricity guide everything we do.
+              </p>
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Values</h4>
-            <p className="text-slate-600 leading-relaxed">
-              Integrity, excellence, and customer-centricity guide everything we do. We believe in building lasting partnerships through trust, quality, and unwavering commitment.
-            </p>
+            {/* Hover Content */}
+            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-600 to-blue-700 text-white opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+              <h4 className="text-xl font-bold mb-4 uppercase tracking-wide">Our Values</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">✓</div>
+                  <span>Integrity First</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">★</div>
+                  <span>Excellence Always</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold">♥</div>
+                  <span>Customer-Centric</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
