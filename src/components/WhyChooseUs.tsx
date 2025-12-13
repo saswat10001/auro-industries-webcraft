@@ -46,10 +46,10 @@ const WhyChooseUs: React.FC = () => {
   const rightFeatures = features.filter(f => f.position === 'right');
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden bg-slate-950/50">
       {/* Background gradient circles */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-100/30 to-blue-200/20 blur-3xl" />
+        <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-900/30 to-slate-900/40 blur-3xl" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
