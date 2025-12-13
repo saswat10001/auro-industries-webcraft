@@ -81,18 +81,18 @@ const Gallery = () => {
   }, [api]);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
             Our Products Gallery
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Explore our comprehensive range of high-quality industrial components and products
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Explore our comprehensive range of high-quality industrial components
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto relative">
           <Carousel
             setApi={setApi}
             className="w-full"
@@ -108,50 +108,43 @@ const Gallery = () => {
               loop: true,
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {galleryImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-4">
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                      <div className="aspect-[4/3] overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img
-                          src={image.src}
-                          alt={image.title}
-                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                          {image.title}
-                        </h3>
-                        <p className="text-slate-600">
-                          {image.description}
-                        </p>
-                      </div>
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-3/5">
+                  <div className="relative aspect-[4/3] bg-blue-50/50 rounded-lg overflow-hidden border border-blue-100/50">
+                    <img
+                      src={image.src}
+                      alt={image.title}
+                      className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-6">
+                      <h3 className="text-lg font-semibold text-white">
+                        {image.title}
+                      </h3>
+                      <p className="text-sm text-white/70">
+                        {image.description}
+                      </p>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="-left-4 md:-left-12 h-10 w-10 border-0 bg-transparent text-blue-600 hover:bg-blue-50 hover:text-blue-700" />
+            <CarouselNext className="-right-4 md:-right-12 h-10 w-10 border-0 bg-transparent text-blue-600 hover:bg-blue-50 hover:text-blue-700" />
           </Carousel>
 
-          <div className="flex justify-center items-center space-x-2 mt-8">
-            <span className="text-sm text-slate-600">
-              {current} of {count}
-            </span>
-            <div className="flex space-x-1">
-              {Array.from({ length: count }).map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === current - 1 ? 'bg-blue-600' : 'bg-slate-300'
-                  }`}
-                  onClick={() => api?.scrollTo(index)}
-                />
-              ))}
-            </div>
+          <div className="flex justify-center items-center gap-2 mt-8">
+            {Array.from({ length: count }).map((_, index) => (
+              <button
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  index === current - 1 
+                    ? 'bg-blue-600 w-6' 
+                    : 'bg-slate-300 hover:bg-slate-400'
+                }`}
+                onClick={() => api?.scrollTo(index)}
+              />
+            ))}
           </div>
         </div>
       </div>
