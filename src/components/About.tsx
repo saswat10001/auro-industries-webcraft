@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Users, Cog, Shield } from 'lucide-react';
+import { Award, Users, Cog, Shield, Handshake, Lightbulb, Star } from 'lucide-react';
 
 const About: React.FC = () => {
   const features = [
@@ -96,6 +96,39 @@ const About: React.FC = () => {
                 <span className="text-slate-600">Pan-India delivery network</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Mission, Vision, Values Section */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Handshake className="w-10 h-10" />
+            </div>
+            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Mission</h4>
+            <p className="text-slate-600 leading-relaxed">
+              To provide world-class industrial solutions through innovative engineering, superior quality, and exceptional customer service while maintaining sustainable manufacturing practices.
+            </p>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Lightbulb className="w-10 h-10" />
+            </div>
+            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Vision</h4>
+            <p className="text-slate-600 leading-relaxed">
+              To become India's leading industrial manufacturing partner, recognized for precision engineering, reliability, and continuous innovation in every component we deliver.
+            </p>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Star className="w-10 h-10" />
+            </div>
+            <h4 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wide">Our Values</h4>
+            <p className="text-slate-600 leading-relaxed">
+              Integrity, excellence, and customer-centricity guide everything we do. We believe in building lasting partnerships through trust, quality, and unwavering commitment.
+            </p>
           </div>
         </div>
 
