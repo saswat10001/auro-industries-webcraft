@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 const processSteps = [
   {
@@ -27,22 +28,41 @@ const Process: React.FC = () => {
   return (
     <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Our Process
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {processSteps.map((step, index) => (
-            <div key={index} className="relative">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="relative"
+            >
               {/* Large Number */}
               <div className="text-7xl md:text-8xl font-bold text-muted-foreground/20 leading-none mb-4">
                 {step.number}
               </div>
               
               {/* Divider Line */}
-              <div className="w-8 h-0.5 bg-primary mb-4"></div>
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: 32 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
+                className="h-0.5 bg-primary mb-4"
+              ></motion.div>
               
               {/* Title */}
               <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -53,7 +73,7 @@ const Process: React.FC = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
