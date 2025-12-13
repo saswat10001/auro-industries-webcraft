@@ -63,14 +63,6 @@ const About: React.FC = () => {
               and infrastructure development. We understand that industrial operations demand 
               components that perform flawlessly under pressure.
             </p>
-            <div className="bg-blue-50/80 backdrop-blur-sm p-6 rounded-lg border-l-4 border-blue-600 hover:shadow-lg transition-all duration-300 transform hover:scale-102">
-              <h4 className="font-bold text-slate-800 mb-2">Our Mission</h4>
-              <p className="text-slate-600">
-                To provide world-class industrial solutions through innovative engineering, 
-                superior quality, and exceptional customer service, while maintaining our 
-                commitment to sustainable manufacturing practices.
-              </p>
-            </div>
           </div>
 
           <div className="bg-gradient-to-br from-slate-100/80 to-blue-50/80 backdrop-blur-sm p-8 rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:scale-105 animate-fade-in animation-delay-600">
