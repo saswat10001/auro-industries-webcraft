@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, Cog, Shield, Handshake, Lightbulb, Star } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const About: React.FC = () => {
   const features = [
@@ -102,7 +103,13 @@ const About: React.FC = () => {
         {/* Mission, Vision, Values Section */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Mission Card */}
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0 }}
+            className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80"
+          >
             {/* Default Content */}
             <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -131,10 +138,16 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Vision Card */}
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80"
+          >
             {/* Default Content */}
             <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -163,10 +176,16 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Values Card */}
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group overflow-hidden h-80"
+          >
             {/* Default Content */}
             <div className="absolute inset-0 p-8 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -195,7 +214,7 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
