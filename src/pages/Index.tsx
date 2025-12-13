@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Products from '../components/Products';
+import Process from '../components/Process';
 import Gallery from '../components/Gallery';
 import Clients from '../components/Clients';
 import Contact from '../components/Contact';
@@ -28,6 +29,7 @@ const Index = () => {
       <Hero onGetQuote={handleGetQuote} />
       <About />
       <Products />
+      <Process />
       <Gallery />
       <Clients />
       <Contact />
