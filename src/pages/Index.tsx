@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import WhyChooseUs from '../components/WhyChooseUs';
 import Products from '../components/Products';
 import Process from '../components/Process';
 import Gallery from '../components/Gallery';
@@ -28,6 +29,7 @@ const Index = () => {
       <Header onGetQuote={handleGetQuote} />
       <Hero onGetQuote={handleGetQuote} />
       <About />
+      <WhyChooseUs />
       <Products />
       <Process />
       <Gallery />
