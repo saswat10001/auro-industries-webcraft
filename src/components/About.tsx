@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Users, Cog, Shield, Handshake, Lightbulb, Star } from 'lucide-react';
 import { motion } from 'motion/react';
-
+import weldingWorker from '@/assets/welding-worker.png';
 const About: React.FC = () => {
   const features = [
     {
@@ -65,30 +65,15 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-100/80 to-blue-50/80 backdrop-blur-sm p-8 rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:scale-105 animate-fade-in animation-delay-600">
-            <h4 className="text-2xl font-bold text-slate-800 mb-6">Why Choose Us?</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                <span className="text-slate-600">Comprehensive range of industrial spares and machinery</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                <span className="text-slate-600">Custom manufacturing capabilities</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                <span className="text-slate-600">Quick turnaround times</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                <span className="text-slate-600">Competitive pricing without compromising quality</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                <span className="text-slate-600">Pan-India delivery network</span>
-              </li>
-            </ul>
+          <div className="animate-fade-in animation-delay-600">
+            <div className="relative">
+              <img 
+                src={weldingWorker} 
+                alt="Industrial welding worker with sparks" 
+                className="w-full h-auto rounded-2xl shadow-2xl object-cover"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent" />
+            </div>
           </div>
         </div>
 
