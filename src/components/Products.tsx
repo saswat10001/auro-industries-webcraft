@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { 
-  Cog, 
-  Link2, 
-  Package, 
-  Circle, 
-  Target, 
-  Wrench, 
-  Hammer, 
-  Settings, 
-  Anchor, 
-  Boxes,
-  Gem,
-  ChevronRight,
-  X
-} from 'lucide-react';
+import { ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Import product images
+import shaftsGearsImg from '@/assets/products/shafts-gears.png';
+import couplingsImg from '@/assets/products/couplings.png';
+import materialHandlingImg from '@/assets/products/material-handling.png';
+import pulleysImg from '@/assets/products/pulleys.png';
+import bearingsImg from '@/assets/products/bearings.png';
+import reclaimerImg from '@/assets/products/reclaimer.png';
+import fastenersImg from '@/assets/products/fasteners.png';
+import engineeringImg from '@/assets/products/engineering.png';
+import liftingImg from '@/assets/products/lifting.png';
+import miscellaneousImg from '@/assets/products/miscellaneous.png';
+import nonFerrousImg from '@/assets/products/non-ferrous.png';
 
 const Products: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -23,7 +22,7 @@ const Products: React.FC = () => {
     {
       id: 'shafts',
       name: 'Shafts & Gears',
-      icon: Cog,
+      image: shaftsGearsImg,
       color: 'from-blue-500 to-blue-600',
       items: [
         'Drive Shafts', 'Motor Shafts', 'Pump Shafts', 'Gear Shafts', 'Splined Shafts',
@@ -33,7 +32,7 @@ const Products: React.FC = () => {
     {
       id: 'couplings',
       name: 'Couplings & Transmission',
-      icon: Link2,
+      image: couplingsImg,
       color: 'from-indigo-500 to-indigo-600',
       items: [
         'Flexible Couplings', 'Rigid Couplings', 'Universal Joints', 'Chain Couplings',
@@ -43,7 +42,7 @@ const Products: React.FC = () => {
     {
       id: 'material-handling',
       name: 'Material Handling',
-      icon: Package,
+      image: materialHandlingImg,
       color: 'from-cyan-500 to-cyan-600',
       items: [
         'Conveyor Rollers', 'Idler Rollers', 'Drive Rollers', 'Conveyor Belts', 'Belt Scrapers',
@@ -53,7 +52,7 @@ const Products: React.FC = () => {
     {
       id: 'pulleys',
       name: 'Pulleys',
-      icon: Circle,
+      image: pulleysImg,
       color: 'from-teal-500 to-teal-600',
       items: [
         'Cast Iron Pulleys', 'Steel Pulleys', 'V-Belt Pulleys', 'Timing Pulleys',
@@ -63,7 +62,7 @@ const Products: React.FC = () => {
     {
       id: 'bearing-units',
       name: 'Bearing Units',
-      icon: Target,
+      image: bearingsImg,
       color: 'from-violet-500 to-violet-600',
       items: [
         'Pillow Block Bearings', 'Flange Bearings', 'Take-up Bearings', 'Hanger Bearings',
@@ -73,7 +72,7 @@ const Products: React.FC = () => {
     {
       id: 'reclaimer-spares',
       name: 'Reclaimer Spares',
-      icon: Settings,
+      image: reclaimerImg,
       color: 'from-purple-500 to-purple-600',
       items: [
         'Reclaimer Wheels', 'Rake Arms', 'Drive Mechanisms', 'Scraper Blades', 'Center Columns',
@@ -83,7 +82,7 @@ const Products: React.FC = () => {
     {
       id: 'fasteners',
       name: 'Fasteners',
-      icon: Wrench,
+      image: fastenersImg,
       color: 'from-orange-500 to-orange-600',
       items: [
         'High Tensile Bolts', 'Hex Bolts', 'Cap Screws', 'Socket Head Screws', 'Nuts & Washers',
@@ -93,7 +92,7 @@ const Products: React.FC = () => {
     {
       id: 'general-engineering',
       name: 'General Engineering',
-      icon: Hammer,
+      image: engineeringImg,
       color: 'from-amber-500 to-amber-600',
       items: [
         'Machined Components', 'Fabricated Structures', 'Weldments', 'Castings', 'Forgings',
@@ -103,7 +102,7 @@ const Products: React.FC = () => {
     {
       id: 'lifting-drum',
       name: 'Lifting & Drum Handling',
-      icon: Anchor,
+      image: liftingImg,
       color: 'from-rose-500 to-rose-600',
       items: [
         'Wire Rope Drums', 'Winch Drums', 'Cable Drums', 'Lifting Hooks', 'Shackles',
@@ -113,7 +112,7 @@ const Products: React.FC = () => {
     {
       id: 'miscellaneous',
       name: 'Miscellaneous',
-      icon: Boxes,
+      image: miscellaneousImg,
       color: 'from-slate-500 to-slate-600',
       items: [
         'Industrial Valves', 'Pipe Fittings', 'Flanges', 'Gaskets', 'O-Rings',
@@ -123,7 +122,7 @@ const Products: React.FC = () => {
     {
       id: 'non-ferrous',
       name: 'Non-Ferrous Items',
-      icon: Gem,
+      image: nonFerrousImg,
       color: 'from-emerald-500 to-emerald-600',
       items: [
         'Bronze Bushings', 'Brass Fittings', 'Aluminum Components', 'Copper Parts',
@@ -148,7 +147,6 @@ const Products: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {productCategories.map((category, index) => {
-              const IconComponent = category.icon;
               return (
                 <motion.div
                   key={category.id}
@@ -160,11 +158,13 @@ const Products: React.FC = () => {
                   className="group cursor-pointer"
                 >
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-blue-200">
-                    {/* Icon Area */}
-                    <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-blue-50 group-hover:to-blue-100 transition-colors duration-300 p-6">
-                      <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                      </div>
+                    {/* Image Area */}
+                    <div className="aspect-square flex items-center justify-center bg-white p-4">
+                      <img 
+                        src={category.image} 
+                        alt={category.name}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
                     
                     {/* Category Name */}
@@ -201,7 +201,11 @@ const Products: React.FC = () => {
                 {/* Modal Header */}
                 <div className={`p-6 bg-gradient-to-r ${selectedCategoryData.color} text-white flex items-center justify-between`}>
                   <div className="flex items-center gap-4">
-                    <selectedCategoryData.icon className="w-8 h-8" />
+                    <img 
+                      src={selectedCategoryData.image} 
+                      alt={selectedCategoryData.name}
+                      className="w-12 h-12 object-contain bg-white rounded-lg p-1"
+                    />
                     <h3 className="text-2xl font-bold">{selectedCategoryData.name}</h3>
                   </div>
                   <button
