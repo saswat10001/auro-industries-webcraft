@@ -2,7 +2,6 @@ import React from 'react';
 import { Award, Users, Cog, Shield, Handshake, Lightbulb, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import weldingWorker from '@/assets/welding-worker.png';
-import SparkParticles from './ui/spark-particles';
 const About: React.FC = () => {
   const features = [
     {
@@ -66,41 +65,16 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <motion.div 
-            className="animate-fade-in animation-delay-600"
-            initial={{ y: 0 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: false }}
-            style={{ perspective: 1000 }}
-          >
-            <motion.div 
-              className="relative"
-              initial={{ y: 50 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              whileHover={{ scale: 1.02, rotateY: 2 }}
-            >
-              <motion.img 
+          <div className="animate-fade-in animation-delay-600">
+            <div className="relative">
+              <img 
                 src={weldingWorker} 
                 alt="Industrial welding worker with sparks" 
                 className="w-full h-auto rounded-2xl shadow-2xl object-cover"
-                style={{ 
-                  transformStyle: "preserve-3d",
-                }}
-                whileInView={{
-                  y: [0, -10, 0],
-                  transition: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }
-                }}
               />
-              <SparkParticles count={15} />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
-            </motion.div>
-          </motion.div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent" />
+            </div>
+          </div>
         </div>
 
         {/* Mission, Vision, Values Section */}
