@@ -2,6 +2,7 @@ import React from 'react';
 import { Award, Users, Cog, Shield, Handshake, Lightbulb, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import weldingWorker from '@/assets/welding-worker.png';
+import SparkParticles from './ui/spark-particles';
 const About: React.FC = () => {
   const features = [
     {
@@ -96,6 +97,7 @@ const About: React.FC = () => {
                   }
                 }}
               />
+              <SparkParticles count={15} />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
             </motion.div>
           </motion.div>
