@@ -116,12 +116,15 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
                 INDUSTRIES
               </span>
             </h1>
+            <p className="text-lg text-blue-400 font-medium tracking-wide">
+              Industrial Spares Manufacturer in Odisha
+            </p>
           </div>
 
           {/* Description */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/50 max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
-            Precision Engineering Solutions for Industrial Excellence.
-            Trusted manufacturer of spares and machinery.
+            Precision Engineering Solutions for Cement, Steel & Power Plants.
+            Trusted supplier of industrial spares across Odisha's industrial belt.
           </p>
 
           {/* CTA Buttons */}
@@ -132,7 +135,7 @@ const Hero: React.FC<HeroProps> = ({ onGetQuote }) => {
               className="text-white border border-white/20 rounded-full px-8"
             >
               <span className="flex items-center gap-2">
-                Get a Quote
+                Request Quotation – Odisha
                 <ArrowRight className="w-5 h-5" />
               </span>
             </LiquidButton>

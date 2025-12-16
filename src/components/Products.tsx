@@ -137,9 +137,12 @@ const Products: React.FC = () => {
     <section id="products" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
+            Industrial Spares Manufacturer in Odisha
+          </span>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">Our Products</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive range of high-quality industrial spares and machinery components designed for optimal performance and durability.
+            Comprehensive range of high-quality industrial spares for cement plants, steel plants, power plants, and mining operations across Odisha.
           </p>
         </div>
 
@@ -241,14 +244,25 @@ const Products: React.FC = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <div className="bg-blue-600 text-white p-8 rounded-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Can't find what you're looking for?</h3>
+            <h3 className="text-2xl font-bold mb-4">Need Custom Industrial Spares for Your Odisha Plant?</h3>
             <p className="text-blue-100 mb-6 text-lg">
-              We offer custom manufacturing services to meet your specific requirements. 
-              Our expert team can design and manufacture components to your exact specifications.
+              We offer custom manufacturing and bulk supply services for cement plants, steel plants, 
+              power plants, and mining operations across Odisha. Fast delivery within the industrial belt.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200">
-              Contact Us for Custom Solutions
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200"
+              >
+                Request Bulk Supply Quote
+              </button>
+              <button 
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-blue-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200 border border-blue-500"
+              >
+                AMC for Odisha Plants
+              </button>
+            </div>
           </div>
         </div>
       </div>
