@@ -6,6 +6,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Products from '../components/Products';
 import Process from '../components/Process';
 import Gallery from '../components/Gallery';
+import ServingOdisha from '../components/ServingOdisha';
 import Clients from '../components/Clients';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -33,6 +34,7 @@ const Index = () => {
       <Products />
       <Process />
       <Gallery />
+      <ServingOdisha />
       <Clients />
       <Contact />
       <Footer />
